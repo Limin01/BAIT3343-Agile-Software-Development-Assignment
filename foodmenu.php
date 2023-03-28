@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once 'model/FoodItem.php';
 
 // Connect to the database
@@ -27,6 +29,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         <link rel="stylesheet" href="foodmenu.css">
 
         </head>
+        <body>
         <ul>
             <?php foreach ($foodMenu as $item) { ?>
                 <li>
@@ -38,10 +41,11 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     <div class="food-price">
                         <span><?php echo $item->price(); ?></span>
                         <div class="order-button">
-                            <button><a href="order.php" >Order</a></button>
+                            <button><a href="order.php?id=<?php echo $item->id; ?>">Order</a></button>
                         </div>
                     </div>
                 </li>
             <?php } ?>
+        </ul>
     </body>
 </html>
