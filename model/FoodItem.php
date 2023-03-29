@@ -15,6 +15,10 @@ class FoodItem {
         $this->imageUrl = $imageUrl;
     }
 
+    public function name() {
+        
+        return $this->name."<br>";
+    }
     public function price() {
         return "<br>RM" . number_format($this->price, 2)."<br>";
     }
