@@ -7,14 +7,6 @@ if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = array();
 }
 
-if (isset($_GET['remove'])) {
-    $index = $_GET['remove'];
-    if (isset($_SESSION['cart'][$index])) {
-        unset($_SESSION['cart'][$index]);
-        $_SESSION['cart'] = array_values($_SESSION['cart']); // reset array keys
-    }
-}
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['remove'])) {
         $index = $_POST['remove'];
@@ -46,34 +38,29 @@ function get_cart_total() {
     return $total;
 }
 
-function submit_order($order) {
-    $conn = get_connection();
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['creatorder'])){
 
-    // Prepare statement for inserting order
-    $stmt = $conn->prepare("INSERT INTO orders (customer_name, customer_email, total_price) VALUES (?, ?, ?)");
-    $stmt->bind_param("ssd", $order->customer_name, $order->customer_email, $order->total_price);
+  // Connect to the database
+  $db = new get_connection();
 
-    // Execute statement
-    $stmt->execute();
+  // Prepare the SQL statement
+  $stmt = $db->prepare('INSERT INTO orders (cartItemList, totalPrice, userId) VALUES (:cartItemList, :totalPrice, :userId)');
 
-    // Get ID of newly inserted order
-    $order_id = $stmt->insert_id;
+  // Bind the parameters
+  $stmt->bindParam(':cartItemList', json_encode($cartItemList));
+  $stmt->bindParam(':totalPrice', $totalPrice);
+  $stmt->bindParam(':userId', $userId);
 
-    // Prepare statement for inserting order items
-    $stmt = $conn->prepare("INSERT INTO order_items (order_id, item_id, quantity, price) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("iiid", $order_id, $item_id, $quantity, $price);
+  // Execute the statement
+  $stmt->execute();
 
-    // Insert each item in order
-    foreach ($order->items as $item) {
-        $item_id = $item['id'];
-        $quantity = $item['quantity'];
-        $price = $item['price'];
-        $stmt->execute();
-    }
-
-    // Close connection
-    $conn->close();
+  // Close the database connection
+  $db = null;
 }
+
+
+  
+
 ?>
 
 
@@ -166,7 +153,7 @@ function submit_order($order) {
                         <td colspan="3" class="text-right"><h5>Total:</h5></td>
                         <td id="cart-total"><h3><?php echo 'RM' . number_format($total, 2); ?></h5></td>
                         <td></td>
-                        <td><a href="checkout.php"><button>Create Order</button></a></td>   
+                        <td><a href="orderlist.php"><button type="submit" name="creatorder">Create Order</button></a></td>   
                     </tr>
                 </tbody>
             </table>

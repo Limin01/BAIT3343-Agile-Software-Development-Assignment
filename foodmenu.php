@@ -41,7 +41,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     <div class="food-price">
                         <span><?php echo $item->price(); ?></span>
                         <div class="order-button">
-                            <button><a href="order.php?id=<?php echo $item->id; ?>">Order</a></button>
+                            <button><a href="OrderFood.php?id=<?php echo $item->id; ?>">Order</a></button>
                         </div>
                     </div>
                 </li>
