@@ -1,6 +1,5 @@
 <?php
 session_start();
-require_once 'db_connection.php';
 
 $index = 0;
 if (!isset($_SESSION['cart'])) {
@@ -25,6 +24,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['quantity'])) {
         }
     }
 }
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create_order'])) {
+    $userId = "hmmsus"; // replace with the actual user ID
+    $cartItemList = $_SESSION['cart'];
+    $totalPrice = get_cart_total();
+
+    $orderId = submitOrder($userId, $cartItemList, $totalPrice);
+
+    if ($orderId > 0) {
+        // the order was created successfully, do something
+        echo "Order created successfully with ID: " . $orderId;
+    } else {
+        // the order creation failed, do something
+        echo "Error creating order";
+    }
+    sleep(3);
+header("Location: orderlist.php");
+exit;
+}
 
 $total = 0;
 
@@ -38,29 +55,30 @@ function get_cart_total() {
     return $total;
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['creatorder'])){
+function submitOrder($userId, $cartItemList, $totalPrice) {
+    require_once('db_connection.php');
+    $conn = get_connection();
 
-  // Connect to the database
-  $db = new get_connection();
+    $currentTime = date('Y-m-d H:i:s');
 
-  // Prepare the SQL statement
-  $stmt = $db->prepare('INSERT INTO orders (cartItemList, totalPrice, userId) VALUES (:cartItemList, :totalPrice, :userId)');
+    // insert the order into the database
+    $sql = "INSERT INTO orders (userId, cartItemList, totalPrice, created_at, updated_at)
+          VALUES (?, ?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("isdss", $userId, json_encode($cartItemList), $totalPrice, $currentTime, $currentTime);
+    $stmt->execute();
+        // check if the insert was successful
+    if ($stmt->affected_rows > 0) {
+        // the insert was successful, return the orderId of the new order
+        return $stmt->insert_id;
+    } else {
+        // the insert failed
+        return -1;
+    }
+    $stmt->close();
+    $conn->close();
 
-  // Bind the parameters
-  $stmt->bindParam(':cartItemList', json_encode($cartItemList));
-  $stmt->bindParam(':totalPrice', $totalPrice);
-  $stmt->bindParam(':userId', $userId);
-
-  // Execute the statement
-  $stmt->execute();
-
-  // Close the database connection
-  $db = null;
 }
-
-
-  
-
 ?>
 
 
@@ -135,7 +153,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['creatorder'])){
 
                             </td>
                             <td>
-                                <form method="post" action=""class="no-style">
+                                <form method="post" action="" class="no-style">
                                     <input type="hidden" name="id" value="<?php echo $cartItem['id']; ?>">
                                     <button type="submit" name="remove" value="<?php echo $index; ?>">Remove</button>
                                 </form>
@@ -144,16 +162,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['creatorder'])){
                         <tr class="separator">
                             <td colspan="6"></td>
                         </tr>
-                    <?php 
-                    $index++;
-                    endforeach; 
+                        <?php
+                        $index++;
+                    endforeach;
                     ?>
                     <tr>
                         <?php $total = get_cart_total(); ?>
                         <td colspan="3" class="text-right"><h5>Total:</h5></td>
                         <td id="cart-total"><h3><?php echo 'RM' . number_format($total, 2); ?></h5></td>
                         <td></td>
-                        <td><a href="orderlist.php"><button type="submit" name="creatorder">Create Order</button></a></td>   
+                        <td><form method="post" class="no-style">
+                                <input type="submit" name="create_order" value="Create Order">
+                            </form>
+                        </td>   
                     </tr>
                 </tbody>
             </table>
