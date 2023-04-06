@@ -144,7 +144,11 @@
                                             Seafood Pizza
                                         </h5>
                                         <p>
-                                            Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
+                                            Seafood pizza is a type of pizza that is topped with various types of seafood, such as shrimp, 
+                                            calamari, clams, mussels, and sometimes even fish. It is typically made with a tomato-based sauce 
+                                            and mozzarella cheese, but can also include other ingredients like garlic, onions, peppers, and 
+                                            herbs. Seafood pizza is often associated with coastal regions and is a popular option for those 
+                                            who enjoy the taste of seafood and pizza together.
                                         </p>
                                         <div class="options">
                                             <h6>
@@ -220,7 +224,11 @@
                                             Beef Burger
                                         </h5>
                                         <p>
-                                            Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
+                                            Beef burger consists of a beef patty that is typically cooked on a grill or griddle and placed 
+                                            between two slices of bread, known as the bun. The patty is often seasoned with salt and pepper 
+                                            and can be made from ground beef or other meats, such as bison or lamb. The burger can also be 
+                                            topped with various ingredients, such as cheese, lettuce, tomato, onion, pickles, bacon, and 
+                                            condiments like ketchup, mustard, or mayonnaise.
                                         </p>
                                         <div class="options">
                                             <h6>
@@ -296,7 +304,11 @@
                                             Margherita Pizza
                                         </h5>
                                         <p>
-                                            Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
+                                            Margherita pizza is a traditional Italian pizza that is made with simple ingredients.
+                                            It typically consists of a thin, crispy crust that is topped with a tomato sauce, 
+                                            fresh mozzarella cheese, and fresh basil leaves. The pizza is named after Queen Margherita of 
+                                            Savoy, who visited Naples in the late 19th century and was served a pizza with the colors of 
+                                            the Italian flag: red (tomato sauce), white (mozzarella cheese), and green (basil leaves).
                                         </p>
                                         <div class="options">
                                             <h6>
@@ -372,7 +384,7 @@
                                             Vegetarian Pasta
                                         </h5>
                                         <p>
-                                            Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
+                                            Vegetarian pizza made without meat or animal products. It typically consists of a crust that is topped with tomato sauce, cheese, and a variety of vegetables such as bell peppers, onions, mushrooms, olives, and tomatoes. Other popular toppings can include artichokes, spinach, broccoli, zucchini, and various herbs and spices. Vegetarian pizza is a popular option for those who follow a vegetarian diet, but it is also enjoyed by people who simply want to reduce their meat consumption or are looking for a healthier pizza option.
                                         </p>
                                         <div class="options">
                                             <h6>
@@ -448,7 +460,7 @@
                                             French Fries
                                         </h5>
                                         <p>
-                                            Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
+                                            French fries, also known as chips or finger chips, are a popular snack or side dish made from thinly sliced potatoes that have been deep-fried until they are crispy and golden brown. They are origin from Belgium or France. They are typically served hot and salted, and can be eaten on their own or paired with ketchup, mayonnaise, or other dipping sauces. French fries are a popular fast food item and are commonly served in restaurants, food trucks, and at sporting events. They are enjoyed around the world and are a staple in many cultures.
                                         </p>
                                         <div class="options">
                                             <h6>
@@ -524,7 +536,7 @@
                                             Mixed Pizza
                                         </h5>
                                         <p>
-                                            Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
+                                            Mixed pizza usually consisting of both meat and vegetables. The specific toppings can vary depending on the pizzeria or individual preference, but commonly used ingredients include sausage, pepperoni, ham, bell peppers, mushrooms, onions, and olives. Mixed pizza offers a range of flavors and textures, making it a popular option for those who want to try multiple toppings on their pizza. It can be served with a variety of sauces, such as tomato sauce or garlic butter, and is often topped with melted mozzarella cheese.
                                         </p>
                                         <div class="options">
                                             <h6>
@@ -600,7 +612,7 @@
                                             Crispy Chicken Burger
                                         </h5>
                                         <p>
-                                            Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
+                                            Crispy chicken burger is a type of sandwich that consists of a bread bun, a crispy breaded chicken patty, and various toppings such as lettuce, tomato, onion, pickles, and mayonnaise. The chicken patty is often made by coating chicken breast with a mixture of flour, spices, and breadcrumbs, and then frying or baking until it is crispy and golden brown. Crispy chicken burgers are a popular fast food item and can be found in many restaurants and fast food chains around the world. They are often considered a more indulgent and satisfying alternative to a traditional beef burger.
                                         </p>
                                         <div class="options">
                                             <h6>
@@ -676,7 +688,7 @@
                                             Grilled Chicken Burger
                                         </h5>
                                         <p>
-                                            Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
+                                            Grilled chicken burger consists of a bread bun, a grilled chicken breast, and various toppings such as lettuce, tomato, onion, pickles, and mayonnaise. The chicken breast is often marinated in a mixture of herbs and spices, such as garlic, oregano, and paprika, before being grilled to perfection. Grilled chicken burgers are often considered a healthier alternative to traditional beef burgers as they are lower in fat and calories. They are a popular menu item in many restaurants and fast food chains, and can also be prepared at home on a grill or stovetop.
                                         </p>
                                         <div class="options">
                                             <h6>
@@ -752,7 +764,7 @@
                                             Creamy Tomato Pasta
                                         </h5>
                                         <p>
-                                            Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
+                                            Creamy tomato pasta made with a sauce that combines tomato sauce and cream. The sauce is typically prepared by sautéing garlic and onions in olive oil, adding tomato sauce, and then simmering until the sauce has thickened. Heavy cream is then added to the tomato sauce, creating a rich and creamy texture. The sauce is often seasoned with herbs such as basil, oregano, and parsley, and can be served with various types of pasta, such as penne or spaghetti. Creamy tomato pasta is a satisfying and flavorful dish that is enjoyed by pasta lovers around the world.
                                         </p>
                                         <div class="options">
                                             <h6>
@@ -818,11 +830,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="btn-box">
-                    <a href="">
-                        View More
-                    </a>
                 </div>
             </div>
         </section>
