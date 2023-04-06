@@ -384,14 +384,18 @@
                                     </div>
                                     <div class="detail-box">
                                         <h5>
-                                            Delicious Pizza
+                                            Seafood Pizza
                                         </h5>
                                         <p>
-                                            Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
+                                            Seafood pizza is a type of pizza that is topped with various types of seafood, such as shrimp, 
+                                            calamari, clams, mussels, and sometimes even fish. It is typically made with a tomato-based sauce 
+                                            and mozzarella cheese, but can also include other ingredients like garlic, onions, peppers, and 
+                                            herbs. Seafood pizza is often associated with coastal regions and is a popular option for those 
+                                            who enjoy the taste of seafood and pizza together.
                                         </p>
                                         <div class="options">
                                             <h6>
-                                                $20
+                                                RM18
                                             </h6>
                                             <a href="">
                                                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
@@ -460,14 +464,18 @@
                                     </div>
                                     <div class="detail-box">
                                         <h5>
-                                            Delicious Burger
+                                            Beef Burger
                                         </h5>
                                         <p>
-                                            Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
+                                            Beef burger consists of a beef patty that is typically cooked on a grill or griddle and placed 
+                                            between two slices of bread, known as the bun. The patty is often seasoned with salt and pepper 
+                                            and can be made from ground beef or other meats, such as bison or lamb. The burger can also be 
+                                            topped with various ingredients, such as cheese, lettuce, tomato, onion, pickles, bacon, and 
+                                            condiments like ketchup, mustard, or mayonnaise.
                                         </p>
                                         <div class="options">
                                             <h6>
-                                                $15
+                                                RM12
                                             </h6>
                                             <a href="">
                                                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
@@ -536,14 +544,18 @@
                                     </div>
                                     <div class="detail-box">
                                         <h5>
-                                            Delicious Pizza
+                                            Margherita Pizza
                                         </h5>
                                         <p>
-                                            Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
+                                            Margherita pizza is a traditional Italian pizza that is made with simple ingredients.
+                                            It typically consists of a thin, crispy crust that is topped with a tomato sauce, 
+                                            fresh mozzarella cheese, and fresh basil leaves. The pizza is named after Queen Margherita of 
+                                            Savoy, who visited Naples in the late 19th century and was served a pizza with the colors of 
+                                            the Italian flag: red (tomato sauce), white (mozzarella cheese), and green (basil leaves).
                                         </p>
                                         <div class="options">
                                             <h6>
-                                                $17
+                                                RM16
                                             </h6>
                                             <a href="">
                                                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
@@ -612,14 +624,14 @@
                                     </div>
                                     <div class="detail-box">
                                         <h5>
-                                            Delicious Pasta
+                                            Vegetarian Pasta
                                         </h5>
                                         <p>
-                                            Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
+                                            Vegetarian pizza made without meat or animal products. It typically consists of a crust that is topped with tomato sauce, cheese, and a variety of vegetables such as bell peppers, onions, mushrooms, olives, and tomatoes. Other popular toppings can include artichokes, spinach, broccoli, zucchini, and various herbs and spices. Vegetarian pizza is a popular option for those who follow a vegetarian diet, but it is also enjoyed by people who simply want to reduce their meat consumption or are looking for a healthier pizza option.
                                         </p>
                                         <div class="options">
                                             <h6>
-                                                $18
+                                                RM12
                                             </h6>
                                             <a href="">
                                                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
@@ -691,11 +703,11 @@
                                             French Fries
                                         </h5>
                                         <p>
-                                            Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
+                                            French fries, also known as chips or finger chips, are a popular snack or side dish made from thinly sliced potatoes that have been deep-fried until they are crispy and golden brown. They are origin from Belgium or France. They are typically served hot and salted, and can be eaten on their own or paired with ketchup, mayonnaise, or other dipping sauces. French fries are a popular fast food item and are commonly served in restaurants, food trucks, and at sporting events. They are enjoyed around the world and are a staple in many cultures.
                                         </p>
                                         <div class="options">
                                             <h6>
-                                                $10
+                                                RM8
                                             </h6>
                                             <a href="">
                                                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
@@ -764,242 +776,14 @@
                                     </div>
                                     <div class="detail-box">
                                         <h5>
-                                            Delicious Pizza
+                                            Mixed Pizza
                                         </h5>
                                         <p>
-                                            Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
+                                            Mixed pizza usually consisting of both meat and vegetables. The specific toppings can vary depending on the pizzeria or individual preference, but commonly used ingredients include sausage, pepperoni, ham, bell peppers, mushrooms, onions, and olives. Mixed pizza offers a range of flavors and textures, making it a popular option for those who want to try multiple toppings on their pizza. It can be served with a variety of sauces, such as tomato sauce or garlic butter, and is often topped with melted mozzarella cheese.
                                         </p>
                                         <div class="options">
                                             <h6>
-                                                $15
-                                            </h6>
-                                            <a href="">
-                                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
-                                                <g>
-                                                <g>
-                                                <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
-                                                      c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
-                                                </g>
-                                                </g>
-                                                <g>
-                                                <g>
-                                                <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
-                                                      C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
-                                                      c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
-                                                      C457.728,97.71,450.56,86.958,439.296,84.91z" />
-                                                </g>
-                                                </g>
-                                                <g>
-                                                <g>
-                                                <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
-                                                      c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
-                                                </g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                </svg>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-4 all burger">
-                            <div class="box">
-                                <div>
-                                    <div class="img-box">
-                                        <img src="images/f7.png" alt="">
-                                    </div>
-                                    <div class="detail-box">
-                                        <h5>
-                                            Tasty Burger
-                                        </h5>
-                                        <p>
-                                            Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
-                                        </p>
-                                        <div class="options">
-                                            <h6>
-                                                $12
-                                            </h6>
-                                            <a href="">
-                                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
-                                                <g>
-                                                <g>
-                                                <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
-                                                      c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
-                                                </g>
-                                                </g>
-                                                <g>
-                                                <g>
-                                                <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
-                                                      C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
-                                                      c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
-                                                      C457.728,97.71,450.56,86.958,439.296,84.91z" />
-                                                </g>
-                                                </g>
-                                                <g>
-                                                <g>
-                                                <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
-                                                      c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
-                                                </g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                </svg>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-4 all burger">
-                            <div class="box">
-                                <div>
-                                    <div class="img-box">
-                                        <img src="images/f8.png" alt="">
-                                    </div>
-                                    <div class="detail-box">
-                                        <h5>
-                                            Tasty Burger
-                                        </h5>
-                                        <p>
-                                            Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
-                                        </p>
-                                        <div class="options">
-                                            <h6>
-                                                $14
-                                            </h6>
-                                            <a href="">
-                                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
-                                                <g>
-                                                <g>
-                                                <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
-                                                      c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
-                                                </g>
-                                                </g>
-                                                <g>
-                                                <g>
-                                                <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
-                                                      C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
-                                                      c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
-                                                      C457.728,97.71,450.56,86.958,439.296,84.91z" />
-                                                </g>
-                                                </g>
-                                                <g>
-                                                <g>
-                                                <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
-                                                      c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
-                                                </g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                <g>
-                                                </g>
-                                                </svg>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-4 all pasta">
-                            <div class="box">
-                                <div>
-                                    <div class="img-box">
-                                        <img src="images/f9.png" alt="">
-                                    </div>
-                                    <div class="detail-box">
-                                        <h5>
-                                            Delicious Pasta
-                                        </h5>
-                                        <p>
-                                            Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
-                                        </p>
-                                        <div class="options">
-                                            <h6>
-                                                $10
+                                                RM22
                                             </h6>
                                             <a href="">
                                                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
