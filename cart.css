@@ -1,0 +1,30 @@
+/* Cart table style */
+
+table {
+  border-collapse: collapse;
+  width: 80%;
+  margin: auto;
+}
+
+thead {
+  background-color: #eee;
+}
+
+th {
+  padding: 10px;
+  text-align: left;
+}
+
+td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.separator {
+  height: 1px;
+  background-color: #ccc;
+}
+
+.text-right {
+  text-align: right;
+}
