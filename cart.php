@@ -15,7 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['quantity'])) {
     $quantity = array_map('intval', $_POST['quantity']);
     foreach ($quantity as $index => $value) {
@@ -24,8 +23,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['quantity'])) {
         }
     }
 }
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['remark'])) {
+    $remarks = $_POST['remark'];
+    foreach ($remarks as $index => $value) {
+        if (isset($_SESSION['cart'][$index])) {
+            $_SESSION['cart'][$index]['remark'] = $value;
+        }
+    }
+}
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create_order'])) {
-    $userId = "hmmsus"; // replace with the actual user ID
+    $userId = "1"; // replace with the actual user ID
     $cartItemList = $_SESSION['cart'];
     $totalPrice = get_cart_total();
 
@@ -132,6 +142,7 @@ function submitOrder($userId, $cartItemList, $totalPrice) {
                         <th>Image</th>
                         <th>Price</th>
                         <th>Quantity</th>
+                        <th>Remark</th>
                         <th>Total</th>
                         <th>Action</th>
                     </tr>
@@ -149,6 +160,12 @@ function submitOrder($userId, $cartItemList, $totalPrice) {
                                     <input type="number" name="quantity[]" value="<?php echo $cartItem['quantity']; ?>" min="1" onchange="updateTotal(this)">
                                 </form>
                             </td>
+                            <td>
+                                <form method="post" action="" class="no-style">
+                                    <input type="hidden" name="index" value="<?php echo $index; ?>">
+                                    <input type="text" name="remark[]" value="<?php echo $cartItem['remark']; ?>">
+                                </form>
+                            </td>
                             <td id="item-total-<?php echo $index; ?>"><?php echo 'RM' . number_format($cartItem['price'] * $cartItem['quantity'], 2); ?></td>
 
                             </td>
@@ -160,7 +177,7 @@ function submitOrder($userId, $cartItemList, $totalPrice) {
                             </td>
                         </tr>
                         <tr class="separator">
-                            <td colspan="6"></td>
+                            <td colspan="7"></td>
                         </tr>
                         <?php
                         $index++;
@@ -170,6 +187,7 @@ function submitOrder($userId, $cartItemList, $totalPrice) {
                         <?php $total = get_cart_total(); ?>
                         <td colspan="3" class="text-right"><h5>Total:</h5></td>
                         <td id="cart-total"><h3><?php echo 'RM' . number_format($total, 2); ?></h5></td>
+                        <td></td>
                         <td></td>
                         <td><form method="post" class="no-style">
                                 <input type="submit" name="create_order" value="Create Order">

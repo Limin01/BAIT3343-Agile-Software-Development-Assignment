@@ -1,9 +1,10 @@
 <?php
+
 // Check if the form was submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get the form data
-    $name = $_POST["name"];
-    $description = $_POST["description"];
+    $name = htmlspecialchars($_POST["name"]);
+    $description = htmlspecialchars($_POST["description"]);
     $price = $_POST["price"];
     $image = $_FILES["image"];
 
@@ -17,6 +18,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     if (empty($price)) {
         $errors[] = "Price is required";
+    } else if (!is_numeric($price)) {
+        $errors[] = "Price must be a number";
     }
     if (empty($image["name"])) {
         $errors[] = "Image is required";
@@ -29,13 +32,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conn = get_connection();
 
         // Upload the image file
-        $target_dir = "uploads/";
+        $target_dir = "images/";
         $target_file = $target_dir . basename($image["name"]);
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
         move_uploaded_file($image["tmp_name"], $target_file);
 
+        
+        // Get the latest food id from the database
+        $sql = "SELECT id FROM fooditem ORDER BY id DESC LIMIT 1";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $id = $row["id"] + 1;
+        } else {
+            $id = 1;
+        }
+        
         // Insert the food item into the database
-        $sql = "INSERT INTO food_items (food_id, name, description, price, image) VALUES (NULL, '$name', '$description', '$price', '$target_file')";
+        $sql = "INSERT INTO fooditem (name, price, description, imageUrl) VALUES ('$name',  '$price','$description', '$target_file')";
 
         if ($conn->query($sql) === TRUE) {
             echo "Food item added successfully";
@@ -51,3 +65,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 }
+

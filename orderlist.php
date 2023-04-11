@@ -25,6 +25,7 @@ $result = mysqli_query($conn, $sql);
                 <tr>
                     <th>Order ID</th>
                     <th>Item </th>
+                    <th>Remark</th>
                     <th>Total</th>
                 </tr>
             </thead>
@@ -35,11 +36,18 @@ $result = mysqli_query($conn, $sql);
                         <td><?php
                             $cartItems = json_decode($row['cartItemList'], true); // decode JSON into array
                             foreach ($cartItems as $item) {
-                                echo $item['name'] . ': ' . $item['price'] . '<br>';
+                                echo $item['name'] . ': ' . $item['price']. '<br>';
                             }
                             ?></td>
 
+                            <td><?php
+                            $cartItems = json_decode($row['cartItemList'], true); // decode JSON into array
+                            foreach ($cartItems as $item) {
+                                echo $item['remark'] . '<br>';
+                            }
+                            ?></td>
                         <td><?php echo 'RM' . number_format($row['totalPrice'], 2); ?></td>
+                        
                     </tr>
                 <?php endwhile; ?>
             </tbody>
