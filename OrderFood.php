@@ -40,20 +40,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['quantity']) && isset(
         $result = $stmt->get_result();
         $item = $result->fetch_object();
         $stmt->close();
-        $conn->close();
 
         if ($item !== null) {
             $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
-            $cart[] = array('id' => $item->id, 'name' => $item->name, 'price' => $item->price, 'quantity' => $quantity, 'imageUrl' => $item->imageUrl);
+            $cart[] = array('id' => $item->id, 'name' => $item->name, 'price' => $item->price, 'quantity' => $quantity,'remark' => isset($_POST['remark']) ? $_POST['remark'] : '', 'imageUrl' => $item->imageUrl);
             $_SESSION['cart'] = $cart;
 
             header('Location: ' . $_POST['cart_url']);
+            exit();
         }
     }
-
-
-    exit();
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -67,12 +65,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['quantity']) && isset(
             <img src="<?php echo $item->imageUrl; ?>" alt="<?php echo $item->name; ?>" width="400" height="350">
             <div>
                 <p><strong>Price:</strong> <?php echo $item->price; ?></p>
-                <p><strong>Description:</strong> <?php echo $item->description; ?></p>
+                <p><strong>Description:</strong> <?php echo $item->description; ?></p><br>
             </div>
         </div>
         <form method="post">
             <label for="quantity">Quantity:</label>
-            <input type="number" name="quantity" value="1" min="1" required>
+            <input type="number" name="quantity" value="1" min="1" required><br><br>
+            <label for="remark">Remark:</label>
+            <input type="text" name="remark"><br>
             <input type="hidden" name="id" value="<?php echo $item->id; ?>">
             <br><br>
             <input type="hidden" name="cart_url" value="cart.php">

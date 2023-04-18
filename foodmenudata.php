@@ -1,35 +1,29 @@
 <?php
-session_start();
-
 require_once 'model/FoodItem.php';
 
-// Connect to the database
-$dsn = 'mysql:host=localhost;dbname=Foodcater';
-$username = 'root';
-$password = '';
-$pdo = new PDO($dsn, $username, $password);
-
-// Prepare and execute the query to retrieve the food items
-$query = 'SELECT id, name, price, description, imageUrl FROM foodItem';
-$stmt = $pdo->query($query);
-
-// Map the results to FoodItem objects
-$foodMenu = array();
-while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    $foodItem = new FoodItem($row['id'], $row['name'], $row['price'], $row['description'], $row['imageUrl']);
-    $foodMenu[] = $foodItem;
-}
+// Define the food menu
+$foodMenu = array(
+    new FoodItem(1001, "Hamburger", 5.99, "A juicy hamburger with your choice of toppings.", "images/hamburger.jpg"),
+    new FoodItem(1002, "Cheeseburger", 6.49, "A hamburger with cheese and your choice of toppings.", "images/cheeseburger.jpg"),
+    new FoodItem(1003, "French Fries", 2.99, "Crispy golden french fries.", "images/french_fries.jpg"),
+    new FoodItem(1004, "Onion Rings", 3.49, "Crispy golden onion rings.", "images/onion_rings.jpg"),
+    new FoodItem(1005, "Soft Drink", 1.99, "Your choice of soda or iced tea.", "images/soft_drink.jpeg")
+);
 
 // Output the HTML page
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <h1>Food Menu</h1>
-        <link rel="stylesheet" href="foodmenu.css">
+        <title>Food Menu</title>
 
-        </head>
-        <body>
+        <link rel="stylesheet" href="foodmenu.css">
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <h1>Food Menu</h1>
         <ul>
             <?php foreach ($foodMenu as $item) { ?>
                 <li>
@@ -41,11 +35,16 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     <div class="food-price">
                         <span><?php echo $item->price(); ?></span>
                         <div class="order-button">
-                            <button><a href="OrderFood.php?id=<?php echo $item->id; ?>">Order</a></button>
+                            <button><a href="order.php?id=<?php echo $item->id(); ?>">Order</a></button>
                         </div>
                     </div>
                 </li>
             <?php } ?>
+
         </ul>
+
+        <script>
+
+        </script>
     </body>
 </html>

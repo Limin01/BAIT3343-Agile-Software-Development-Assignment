@@ -1,18 +1,9 @@
 <?php
 session_start();
-require_once 'db_connection.php';
 
 $index = 0;
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = array();
-}
-
-if (isset($_GET['remove'])) {
-    $index = $_GET['remove'];
-    if (isset($_SESSION['cart'][$index])) {
-        unset($_SESSION['cart'][$index]);
-        $_SESSION['cart'] = array_values($_SESSION['cart']); // reset array keys
-    }
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -24,7 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['quantity'])) {
     $quantity = array_map('intval', $_POST['quantity']);
     foreach ($quantity as $index => $value) {
@@ -32,6 +22,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['quantity'])) {
             $_SESSION['cart'][$index]['quantity'] = $value;
         }
     }
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['remark'])) {
+    $remarks = $_POST['remark'];
+    foreach ($remarks as $index => $value) {
+        if (isset($_SESSION['cart'][$index])) {
+            $_SESSION['cart'][$index]['remark'] = $value;
+        }
+    }
+}
+
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create_order'])) {
+    $userId = "1"; // replace with the actual user ID
+    $cartItemList = $_SESSION['cart'];
+    $totalPrice = get_cart_total();
+
+    $orderId = submitOrder($userId, $cartItemList, $totalPrice);
+
+    if ($orderId > 0) {
+        // the order was created successfully, do something
+        echo "Order created successfully with ID: " . $orderId;
+    } else {
+        // the order creation failed, do something
+        echo "Error creating order";
+    }
+    sleep(3);
+header("Location: orderlist.php");
+exit;
 }
 
 $total = 0;
@@ -46,33 +65,29 @@ function get_cart_total() {
     return $total;
 }
 
-function submit_order($order) {
+function submitOrder($userId, $cartItemList, $totalPrice) {
+    require_once('db_connection.php');
     $conn = get_connection();
 
-    // Prepare statement for inserting order
-    $stmt = $conn->prepare("INSERT INTO orders (customer_name, customer_email, total_price) VALUES (?, ?, ?)");
-    $stmt->bind_param("ssd", $order->customer_name, $order->customer_email, $order->total_price);
+    $currentTime = date('Y-m-d H:i:s');
 
-    // Execute statement
+    // insert the order into the database
+    $sql = "INSERT INTO orders (userId, cartItemList, totalPrice, created_at, updated_at)
+          VALUES (?, ?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("isdss", $userId, json_encode($cartItemList), $totalPrice, $currentTime, $currentTime);
     $stmt->execute();
-
-    // Get ID of newly inserted order
-    $order_id = $stmt->insert_id;
-
-    // Prepare statement for inserting order items
-    $stmt = $conn->prepare("INSERT INTO order_items (order_id, item_id, quantity, price) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("iiid", $order_id, $item_id, $quantity, $price);
-
-    // Insert each item in order
-    foreach ($order->items as $item) {
-        $item_id = $item['id'];
-        $quantity = $item['quantity'];
-        $price = $item['price'];
-        $stmt->execute();
+        // check if the insert was successful
+    if ($stmt->affected_rows > 0) {
+        // the insert was successful, return the orderId of the new order
+        return $stmt->insert_id;
+    } else {
+        // the insert failed
+        return -1;
     }
-
-    // Close connection
+    $stmt->close();
     $conn->close();
+
 }
 ?>
 
@@ -127,6 +142,7 @@ function submit_order($order) {
                         <th>Image</th>
                         <th>Price</th>
                         <th>Quantity</th>
+                        <th>Remark</th>
                         <th>Total</th>
                         <th>Action</th>
                     </tr>
@@ -144,29 +160,39 @@ function submit_order($order) {
                                     <input type="number" name="quantity[]" value="<?php echo $cartItem['quantity']; ?>" min="1" onchange="updateTotal(this)">
                                 </form>
                             </td>
+                            <td>
+                                <form method="post" action="" class="no-style">
+                                    <input type="hidden" name="index" value="<?php echo $index; ?>">
+                                    <input type="text" name="remark[]" value="<?php echo $cartItem['remark']; ?>">
+                                </form>
+                            </td>
                             <td id="item-total-<?php echo $index; ?>"><?php echo 'RM' . number_format($cartItem['price'] * $cartItem['quantity'], 2); ?></td>
 
                             </td>
                             <td>
-                                <form method="post" action=""class="no-style">
+                                <form method="post" action="" class="no-style">
                                     <input type="hidden" name="id" value="<?php echo $cartItem['id']; ?>">
                                     <button type="submit" name="remove" value="<?php echo $index; ?>">Remove</button>
                                 </form>
                             </td>
                         </tr>
                         <tr class="separator">
-                            <td colspan="6"></td>
+                            <td colspan="7"></td>
                         </tr>
-                    <?php 
-                    $index++;
-                    endforeach; 
+                        <?php
+                        $index++;
+                    endforeach;
                     ?>
                     <tr>
                         <?php $total = get_cart_total(); ?>
                         <td colspan="3" class="text-right"><h5>Total:</h5></td>
                         <td id="cart-total"><h3><?php echo 'RM' . number_format($total, 2); ?></h5></td>
                         <td></td>
-                        <td><a href="checkout.php"><button>Create Order</button></a></td>   
+                        <td></td>
+                        <td><form method="post" class="no-style">
+                                <input type="submit" name="create_order" value="Create Order">
+                            </form>
+                        </td>   
                     </tr>
                 </tbody>
             </table>
