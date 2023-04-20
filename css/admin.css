@@ -42,23 +42,24 @@ body {
   border-radius: 5px;
 }
 
-.sidebar a:hover {
-  background-color: #fff;
-  color: #333;
+/* Set the height and width of the sidebar */
+.sidebar {
+  width: 200px;
+  height: 100%;
 }
 
-.main-content {
-  flex: 1;
-  padding: 20px;
+/* Set the background color */
+.sidebar {
   background-color: #f2f2f2;
 }
 
-h1 {
-  font-size: 28px;
-  margin-bottom: 20px;
+/* Set the scrolling behavior */
+.sidebar {
+  overflow-y: scroll; /* enable vertical scrolling */
+  -webkit-overflow-scrolling: touch; /* enable smooth scrolling on iOS devices */
 }
 
-p {
-  font-size: 16px;
-  line-height: 1.5;
+/* Hide the scrollbar */
+.sidebar::-webkit-scrollbar {
+  display: none; /* hide the scrollbar */
 }
