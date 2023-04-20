@@ -1,3 +1,18 @@
+<?php
+// Connect to the database
+$host = 'localhost';
+$username = 'root';
+$password = '';
+$dbname = 'bait3343';
+
+$conn = new mysqli($host, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,7 +35,7 @@
                 <h1>Menu Record</h1>
                 <p>
                     <a href="create_food.php" class="create-btn">Create</a>
-<!--                    {{ count($products) }} record(s)-->
+                    <!--                    {{ count($products) }} record(s)-->
                 </p>
                 <table>
                     <thead>
@@ -35,18 +50,27 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>P001</td>
-                            <td>Pizza</td>
-                            <td>Seafood Pizza</td>
-                            <td>18.00</td>
-                            <td>Seafood pizza is a type of pizza that is topped with various types of seafood, such as shrimp, calamari, clams, mussels, and sometimes even fish. It is typically made with a tomato-based sauce and mozzarella cheese, but can also include other ingredients like garlic, onions, peppers, and herbs. Seafood pizza is often associated with coastal regions and is a popular option for those who enjoy the taste of seafood and pizza together.</td>
-                            <td><img src="images/f1.png" alt="Seafood Pizza" class="food-image"></td>
-                            <td>
-                                <a href="edit_food.php" class="edit-btn">Edit</a>
-                                <a href="delete_food.php" class="delete-btn">Delete</a>
-                            </td>
-                        </tr>
+                        <?php
+                        // Perform database query to retrieve all foods
+                        $query = "SELECT * FROM food";
+                        $result = mysqli_query($conn, $query);
+
+                        // Loop through each row in the result set and display it in a table row
+                        foreach ($result as $row) {
+                            echo "<tr>";
+                            echo "<td>" . $row['food_id'] . "</td>";
+                            echo "<td>" . $row['food_category'] . "</td>";
+                            echo "<td>" . $row['food_name'] . "</td>";
+                            echo "<td>" . "RM" . $row['food_price'] . "</td>";
+                            echo "<td>" . $row['food_desc'] . "</td>";
+                            echo "<td><img src='images/" . $row['food_img'] . "' width='150px' height='150px' accept='.jpg, .jpeg, .png'></td>";
+                            echo "<td><a href='edit.php?food_id=" . $row['food_id'] . "'>Edit</a> | <a href='delete.php?food_id=" . $row['food_id'] . "'>Delete</a></td>";
+                            echo "</tr>";
+                        }
+
+                        // Close database connection
+                        mysqli_close($conn);
+                        ?>
                     </tbody>
                 </table>
             </div>
