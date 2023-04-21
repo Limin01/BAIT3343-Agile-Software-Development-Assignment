@@ -1,49 +1,39 @@
+<?php include('server.php') ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>SIGN UP</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+  <title>Registration system PHP and MySQL</title>
+  <link rel="stylesheet" type="text/css" href="regisStyle.css">
 </head>
 <body>
-    <form action="signup-check.php" method="post">
-     	<h2>REGISTER</h2>
-     	<?php if (isset($_GET['error'])) { ?>
-            <p class="error"><?php echo $_GET['error']; ?></p>
-     	<?php } ?>
-
-        <?php if (isset($_GET['success'])) { ?>
-            <p class="success"><?php echo $_GET['success']; ?></p>
-        <?php } ?>
-               
-        <label>Email</label>
-        <?php if (isset($_GET['uname'])) { ?>
-            <input type="text" name="email" placeholder="Email" required="" value="<?php echo $_GET['email']; ?>"><br>
-        <?php }
-        else{ ?>
-            <input type="text" name="email" placeholder="Email" required=""><br>
-        <?php }?>
-
-        <label>Name</label>
-        <?php if (isset($_GET['name'])) { ?>
-            <input type="text" name="name" placeholder="Name" required="" value="<?php echo $_GET['name']; ?>"><br>
-        <?php }else{ ?>
-            <input type="text" name="name" placeholder="Name" required=""><br>
-        <?php }?>
-            
-        <label for="contactNo">Contact Number</label>
-        <input type="tel" name="contactNo" placeholder="000-00000000" required=""/><br/>
-        
-        <label for="address">Address</label>
-        <input type="text" name="address" placeholder="Address" required=""/><br/>
-               
-     	<label>Password</label>
-     	<input type="password" name="password" placeholder="Password" required=""><br>
-
-<!--        <label>Reset Password</label>
-        <input type="password" name="reset_password" placeholder="Reset Password"><br>-->
-
-     	<button type="submit">Register</button>
-        <a href="index.php" class="ca">Already have an account?</a>
-     </form>
+  <div class="header">
+  	<h2>Register</h2>
+  </div>
+	
+  <form method="post" action="register.php">
+  	<?php include('errors.php'); ?>
+  	<div class="input-group">
+  	  <label>Username</label>
+  	  <input type="text" name="username" value="<?php echo $username; ?>">
+  	</div>
+  	<div class="input-group">
+  	  <label>Email</label>
+  	  <input type="email" name="email" value="<?php echo $email; ?>">
+  	</div>
+  	<div class="input-group">
+  	  <label>Password</label>
+  	  <input type="password" name="password_1">
+  	</div>
+  	<div class="input-group">
+  	  <label>Confirm password</label>
+  	  <input type="password" name="password_2">
+  	</div>
+  	<div class="input-group">
+  	  <button type="submit" class="btn" name="reg_user">Register</button>
+  	</div>
+  	<p>
+  		Already a member? <a href="login.php">Sign in</a>
+  	</p>
+  </form>
 </body>
 </html>

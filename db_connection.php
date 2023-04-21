@@ -4,7 +4,7 @@ function get_connection() {
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "foodcater";
+    $dbname = "loginsystem";
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);

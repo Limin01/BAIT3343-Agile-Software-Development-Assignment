@@ -2,9 +2,9 @@
 session_start();
 
 require_once 'model/FoodItem.php';
-
+require 'header.php';
 // Connect to the database
-$dsn = 'mysql:host=localhost;dbname=Foodcater';
+$dsn = 'mysql:host=localhost;dbname=loginsystem';
 $username = 'root';
 $password = '';
 $pdo = new PDO($dsn, $username, $password);

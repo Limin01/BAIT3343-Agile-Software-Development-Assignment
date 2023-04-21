@@ -92,7 +92,7 @@ input[type="submit"]:hover {
     </head>
     <body>
         <h1>Create Menu Item</h1>
-        <form action="db.php" method="POST" enctype="multipart/form-data">
+        <form action="insert_food.php" method="POST" enctype="multipart/form-data">
             <label for="food_id">Food ID:</label>
             <input type="text" id="food_id" name="food_id" required>  
 
@@ -115,4 +115,4 @@ input[type="submit"]:hover {
             <input type="submit" value="Create">
         </form>
     </body>
-</html>
+</html> 

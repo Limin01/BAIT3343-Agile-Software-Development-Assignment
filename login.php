@@ -1,56 +1,31 @@
-<?php 
-session_start(); 
-include "db_conn.php";
-
-if (isset($_POST['uname']) && isset($_POST['password'])) {
-
-    function validate($data){
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-	return $data;
-    }
-
-    $email = validate($_POST['email']);
-    $pass = validate($_POST['password']);
-
-    if (empty($uname)) {
-	header("Location: index.php?error=Email is required");
-	exit();
-    }
-    else if (empty($pass)) {
-        header("Location: index.php?error=Password is required");
-	exit();
-    }
-    else {  // hashing the password
-        $pass = md5($pass);
-
-        $sql = "SELECT * FROM users WHERE email='$email' AND password='$pass'";
-
-	$result = mysqli_query($conn, $sql);
-
-	if (mysqli_num_rows($result) === 1) {
-            $row = mysqli_fetch_assoc($result);
-                    
-            if ($row['user_name'] === $uname && $row['password'] === $pass) {
-                $_SESSION['user_name'] = $row['user_name'];
-                $_SESSION['name'] = $row['name'];
-                $_SESSION['id'] = $row['id'];
-                header("Location: home.php");
-                exit();
-            }
-            else {
-                header("Location: index.php?error=Incorrect User name or password");
-                exit();
-            }
-	}
-        else {
-            header("Location: index.php?error=Incorect User name or password");
-            exit();
-        }
-    }
-}
-else {
-    header("Location: index.php");
-    exit();
-}
+<?php include('server.php') ?>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration system PHP and MySQL</title>
+  <link rel="stylesheet" type="text/css" href="regisStyle.css">
+</head>
+<body>
+  <div class="header">
+  	<h2>Login</h2>
+  </div>
+	 
+  <form method="post" action="login.php">
+  	<?php include('errors.php'); ?>
+  	<div class="input-group">
+  		<label>Username</label>
+  		<input type="text" name="username" >
+  	</div>
+  	<div class="input-group">
+  		<label>Password</label>
+  		<input type="password" name="password">
+  	</div>
+  	<div class="input-group">
+  		<button type="submit" class="btn" name="login_user">Login</button>
+  	</div>
+  	<p>
+  		Not yet a member? <a href="register.php">Sign up</a>
+  	</p>
+  </form>
+</body>
+</html>

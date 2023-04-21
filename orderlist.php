@@ -1,9 +1,9 @@
 <?php
 // Include database connection file
 require_once 'db_connection.php';
-
+require 'header.php';
 // Retrieve orders from the database
-$conn = mysqli_connect('localhost', 'root', '', 'foodcater');
+$conn = mysqli_connect('localhost', 'root', '', 'loginsystem');
 if (!$conn) {
     die('Could not connect to the database: ' . mysqli_connect_error());
 }
